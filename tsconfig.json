@@ -1,20 +1,21 @@
 {
   "compilerOptions": {
-    "target": "es2023",
-    "lib": ["esnext"],
-    "module": "esnext",
-    "jsx": "react-native",
     "strict": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@api/*": ["./src/api/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@components/*": ["./src/components/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@models/*": ["./src/models/*"],
+      "@helpers/*": ["./src/helpers/*"],
+      "@contexts/*": ["./src/contexts/*"]
     },
-    "allowJs": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "types": []
   },
-  "include": ["src"],
-  "extends": "expo/tsconfig.base"
+  "include": ["src/**/*", "nativewind-env.d.ts"],
+  "extends": "@react-native/typescript-config"
 }
