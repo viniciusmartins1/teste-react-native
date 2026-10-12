@@ -1,0 +1,9 @@
+{
+  "[typescriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.prettier": "explicit",
+      "source.removeUnusedImports": "always"
+    }
+  },
+  "editor.formatOnSave": true
+}
