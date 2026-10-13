@@ -1,13 +1,16 @@
-import './styles/global.css';
-
-import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
+import '@styles/global.css';
+import { AppRoutes } from './Routes';
+import { LoadingContextProvider } from '@contexts/LoadingContext';
+import { ContentContextProvider } from '@contexts/ContentContext';
+import Toast from 'react-native-toast-message';
 
 export default function App() {
   return (
-    <View className="flex-1 items-center justify-center">
-      <Text className="text-cyan-300 text-2xl">Hello World</Text>
-      <StatusBar style="dark" />
-    </View>
+    <LoadingContextProvider>
+      <ContentContextProvider>
+        <AppRoutes />
+        <Toast />
+      </ContentContextProvider>
+    </LoadingContextProvider>
   );
 }
