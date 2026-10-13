@@ -14,7 +14,8 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "jsx": "react-jsx",
-    "types": []
+    "types": ["node"],
+    "strictNullChecks": true
   },
   "include": ["src/**/*", "nativewind-env.d.ts"],
   "extends": "@react-native/typescript-config"
