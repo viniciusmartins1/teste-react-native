@@ -1,0 +1,33 @@
+import type {
+  Content,
+  ContentDetails,
+  ContentDetailsResponse,
+  ContentResponse,
+} from '@models/content';
+import { capitalizeFirstLetter, formatterDate, formatterDuration } from '@helpers/formatter';
+
+export const contentListAdapter = (content: ContentResponse): Content => {
+  return {
+    id: content.id,
+    title: content.title,
+    contentType: capitalizeFirstLetter(content.type),
+    category: capitalizeFirstLetter(content.category),
+    duration: formatterDuration(content.durationSeconds),
+    thumbnailUrl: content.thumbnailUrl,
+  };
+};
+
+export const contentDetailsAdapter = (content: ContentDetailsResponse): ContentDetails => {
+  return {
+    id: content.id,
+    title: content.title,
+    contentType: capitalizeFirstLetter(content.type),
+    category: capitalizeFirstLetter(content.category),
+    duration: formatterDuration(content.durationSeconds),
+    thumbnailUrl: content.thumbnailUrl,
+    description: content.description,
+    instructor: content.instructor,
+    isFavorite: content.isFavorite,
+    publishedAt: formatterDate(content.publishedAt),
+  };
+};
